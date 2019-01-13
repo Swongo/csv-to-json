@@ -6,15 +6,20 @@ try:
     csvfile = open(sys.argv[1], 'r')
     jsonfile = open(sys.argv[2], 'w')
     delimiterType = (sys.argv[3])
-    fieldnamesArgs = (sys.argv[4:])
+    columnName = (sys.argv[4:])
 
-    reader = csv.DictReader(csvfile, fieldnamesArgs, delimiter=delimiterType, quoting=csv.QUOTE_NONE)
+    reader = csv.DictReader(csvfile, columnName, delimiter=delimiterType, quoting=csv.QUOTE_NONE)
 
-    for row in reader:
-        json.dump(row, jsonfile)
-        jsonfile.write('\n')
+    output = list(reader)
+
+    for row in output:
+        if row == output[-1]:
+            json.dump(row, jsonfile)
+        else:
+            json.dump(row, jsonfile)
+            jsonfile.write(',\n')
 
     print(sys.argv[2] + " created")
 
 except Exception:
-    print("Usage: specifiy input output delimiter fieldnames -> ex. py CsvToJson.py \'Input.csv\' \'Output.json\' \',\' \'Id' 'Firstname' 'Lastname\' ")
+    print("Usage: specifiy input output delimiter columns -> ex. py CsvToJson.py \'Input.csv\' \'Output.json\' \',\' \'Id' 'Firstname' 'Lastname\' ")
