@@ -15,6 +15,11 @@ try:
     for row in output:
         if row == output[-1]:
             json.dump(row, jsonfile)
+            jsonfile.write(']')
+        elif row == output[0]:
+            jsonfile.write('[')
+            json.dump(row, jsonfile)
+            jsonfile.write(',\n')
         else:
             json.dump(row, jsonfile)
             jsonfile.write(',\n')
