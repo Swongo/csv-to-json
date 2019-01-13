@@ -2,7 +2,6 @@ import csv
 import json
 import sys
 
-
 try:
     csvfile = open(sys.argv[1], 'r')
     jsonfile = open(sys.argv[2], 'w')
