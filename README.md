@@ -1,5 +1,11 @@
-# python-scripts
+# Python scripts
 
 ## Csv to json
-Usage: input output delimiter columns \
-Example (remove quotation marks):  py CsvToJson.py "Input.csv" "Output.json" "," "Id" "Firstname" "Lastname"
+
+### Usage 
+input output delimiter column(s) <br /> 
+
+#### Example: 
+`py CsvToJson.py Input.csv Output.json , Id Firstname Lastname`
+
+---
