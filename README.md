@@ -1,6 +1,4 @@
-# Python scripts
-
-## Csv to json
+# Csv to json
 
 ### Usage 
 input output delimiter column(s) <br /> 
